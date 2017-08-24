@@ -1,0 +1,27 @@
+ext {
+
+    // Versions
+    supportVersion = '25.3.1'
+    junitVersion = '4.12'
+
+
+    // Packages
+    supportPackage = 'com.android.support'
+    junitPackage = 'junit'
+
+
+    // Dependencies
+    supportDependencies = [
+            appCompat  : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            gridLayout : buildDependency(supportPackage, 'gridlayout-v7', supportVersion)
+    ]
+
+    testingDependencies = [
+            junit : buildDependency(junitPackage, 'junit', junitVersion)
+    ]
+}
+
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}
