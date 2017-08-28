@@ -5,9 +5,4 @@ public class Cell {
 
     public Player player;
     public String value;
-
-
-    public Cell() {
-        this.value = "";
-    }
 }
