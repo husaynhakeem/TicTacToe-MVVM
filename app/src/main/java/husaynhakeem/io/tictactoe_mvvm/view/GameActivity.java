@@ -3,7 +3,6 @@ package husaynhakeem.io.tictactoe_mvvm.view;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -16,6 +15,7 @@ public class GameActivity extends AppCompatActivity implements Observer {
 
 
     private static final String GAME_DIALOG_TAG = "game_dialog_tag";
+    private static final String GAME_END_DIALOG_TAG = "game_end_dialog_tag";
     private ActivityGameBinding activityGameBinding;
     private GameViewModel gameViewModel;
 
@@ -53,6 +53,7 @@ public class GameActivity extends AppCompatActivity implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        Toast.makeText(this, "The winner is " + (String) arg, Toast.LENGTH_SHORT).show();
+        GameEndDialog dialog = GameEndDialog.newInstance(this, (String) arg);
+        dialog.show(getSupportFragmentManager(), GAME_END_DIALOG_TAG);
     }
 }
