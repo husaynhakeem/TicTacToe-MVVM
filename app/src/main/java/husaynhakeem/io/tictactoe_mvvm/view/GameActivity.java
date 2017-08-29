@@ -14,7 +14,7 @@ import husaynhakeem.io.tictactoe_mvvm.viewmodel.GameViewModel;
 public class GameActivity extends AppCompatActivity implements Observer {
 
 
-    private static final String GAME_DIALOG_TAG = "game_dialog_tag";
+    private static final String GAME_BEGIN_DIALOG_TAG = "game_dialog_tag";
     private static final String GAME_END_DIALOG_TAG = "game_end_dialog_tag";
     private ActivityGameBinding activityGameBinding;
     private GameViewModel gameViewModel;
@@ -28,9 +28,9 @@ public class GameActivity extends AppCompatActivity implements Observer {
     }
 
 
-    private void promptForPlayers() {
+    public void promptForPlayers() {
         GameBeginDialog dialog = GameBeginDialog.newInstance(this);
-        dialog.show(getSupportFragmentManager(), GAME_DIALOG_TAG);
+        dialog.show(getSupportFragmentManager(), GAME_BEGIN_DIALOG_TAG);
     }
 
 
