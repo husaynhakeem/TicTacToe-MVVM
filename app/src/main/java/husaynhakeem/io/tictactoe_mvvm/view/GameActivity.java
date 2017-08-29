@@ -29,7 +29,7 @@ public class GameActivity extends AppCompatActivity implements Observer {
 
 
     private void promptForPlayers() {
-        GameDialog dialog = GameDialog.newInstance(this);
+        GameBeginDialog dialog = GameBeginDialog.newInstance(this);
         dialog.show(getSupportFragmentManager(), GAME_DIALOG_TAG);
     }
 

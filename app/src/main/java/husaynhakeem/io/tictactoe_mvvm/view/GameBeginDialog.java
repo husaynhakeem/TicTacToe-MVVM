@@ -16,7 +16,7 @@ import android.view.View;
 
 import husaynhakeem.io.tictactoe_mvvm.R;
 
-public class GameDialog extends DialogFragment {
+public class GameBeginDialog extends DialogFragment {
 
     private TextInputLayout player1Layout;
     private TextInputLayout player2Layout;
@@ -31,8 +31,8 @@ public class GameDialog extends DialogFragment {
     private GameActivity activity;
 
 
-    public static GameDialog newInstance(GameActivity activity) {
-        GameDialog dialog = new GameDialog();
+    public static GameBeginDialog newInstance(GameActivity activity) {
+        GameBeginDialog dialog = new GameBeginDialog();
         dialog.activity = activity;
         return dialog;
     }
