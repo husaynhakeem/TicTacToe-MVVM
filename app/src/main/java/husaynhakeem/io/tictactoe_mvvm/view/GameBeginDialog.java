@@ -53,7 +53,7 @@ public class GameBeginDialog extends DialogFragment {
 
     private void initViews() {
         rootView = LayoutInflater.from(getContext())
-                .inflate(R.layout.game_dialog, null, false);
+                .inflate(R.layout.game_begin_dialog, null, false);
 
         player1Layout = (TextInputLayout) rootView.findViewById(R.id.layout_player1);
         player2Layout = (TextInputLayout) rootView.findViewById(R.id.layout_player2);
