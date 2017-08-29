@@ -3,6 +3,7 @@ package husaynhakeem.io.tictactoe_mvvm.view;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -22,6 +23,7 @@ public class GameActivity extends AppCompatActivity implements Observer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDataBinding();
+        setUpObserver(gameViewModel);
         promptForPlayers();
     }
 
@@ -33,12 +35,17 @@ public class GameActivity extends AppCompatActivity implements Observer {
     }
 
 
+    private void setUpObserver(Observable observable) {
+        observable.addObserver(this);
+    }
+
+
     private void promptForPlayers() {
     }
 
 
     @Override
     public void update(Observable o, Object arg) {
-
+        Toast.makeText(this, "The winner is " + (String) arg, Toast.LENGTH_SHORT).show();
     }
 }

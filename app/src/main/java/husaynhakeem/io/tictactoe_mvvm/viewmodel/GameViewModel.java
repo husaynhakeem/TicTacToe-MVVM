@@ -39,6 +39,7 @@ public class GameViewModel extends Observable {
             game.winner = game.currentPlayer;
             Log.e(TAG, "Winner is: " + game.winner.name);
             setChanged();
+            notifyObservers(game.winner.name);
         }
         game.switchPlayer();
     }
