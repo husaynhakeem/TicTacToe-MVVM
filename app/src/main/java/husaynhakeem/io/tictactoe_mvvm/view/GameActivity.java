@@ -15,6 +15,7 @@ import husaynhakeem.io.tictactoe_mvvm.viewmodel.GameViewModel;
 public class GameActivity extends AppCompatActivity implements Observer {
 
 
+    private static final String GAME_DIALOG_TAG = "game_dialog_tag";
     private ActivityGameBinding activityGameBinding;
     private GameViewModel gameViewModel;
 
@@ -22,30 +23,31 @@ public class GameActivity extends AppCompatActivity implements Observer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initDataBinding();
         setUpObserver(gameViewModel);
         promptForPlayers();
     }
 
 
-    private void initDataBinding() {
+    private void promptForPlayers() {
+        GameDialog dialog = GameDialog.newInstance(this);
+        dialog.show(getSupportFragmentManager(), GAME_DIALOG_TAG);
+    }
+
+
+    public void onPlayersSet(String player1, String player2) {
+        initDataBinding(player1, player2);
+    }
+
+
+    private void initDataBinding(String player1, String player2) {
         activityGameBinding = DataBindingUtil.setContentView(this, R.layout.activity_game);
-        gameViewModel = new GameViewModel();
+        gameViewModel = new GameViewModel(player1, player2);
         activityGameBinding.setGameViewModel(gameViewModel);
     }
 
 
     private void setUpObserver(Observable observable) {
         observable.addObserver(this);
-    }
-
-
-    private void promptForPlayers() {
-
-    }
-
-
-    public void onPlayersSet(String player1, String player2) {
     }
 
 

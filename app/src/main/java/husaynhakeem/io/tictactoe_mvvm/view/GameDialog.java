@@ -31,7 +31,7 @@ public class GameDialog extends DialogFragment {
     private GameActivity activity;
 
 
-    public GameDialog newInstance(GameActivity activity) {
+    public static GameDialog newInstance(GameActivity activity) {
         GameDialog dialog = new GameDialog();
         dialog.activity = activity;
         return dialog;

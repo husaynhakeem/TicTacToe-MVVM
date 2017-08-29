@@ -19,9 +19,9 @@ public class GameViewModel extends Observable {
     public Game game;
 
 
-    public GameViewModel() {
+    public GameViewModel(String player1, String player2) {
         game = new Game();
-        beginGame(new Player("Husayn", "x"), new Player("Yasin", "o"));
+        beginGame(new Player(player1, "x"), new Player(player2, "o"));
     }
 
 
