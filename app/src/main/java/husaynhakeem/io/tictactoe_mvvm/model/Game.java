@@ -24,13 +24,6 @@ public class Game {
     }
 
 
-    public Game(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
-        cells = new Cell[BOARD_SIZE][BOARD_SIZE];
-    }
-
-
     public boolean hasGameEnded() {
         return hasThreeSameHorizontalCells() || hasThreeSameVerticalCells() || hasThreeSameDiagonalCells();
     }
