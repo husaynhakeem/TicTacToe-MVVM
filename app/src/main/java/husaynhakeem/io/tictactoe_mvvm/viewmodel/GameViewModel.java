@@ -28,6 +28,7 @@ public class GameViewModel extends Observable {
     public void beginGame(Player player1, Player player2) {
         game.player1 = player1;
         game.player2 = player2;
+        game.currentPlayer = player1;
     }
 
 

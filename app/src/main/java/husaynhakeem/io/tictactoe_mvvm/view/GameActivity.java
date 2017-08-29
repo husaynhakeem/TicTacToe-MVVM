@@ -34,7 +34,6 @@ public class GameActivity extends AppCompatActivity implements Observer {
 
 
     private void promptForPlayers() {
-
     }
 
 
