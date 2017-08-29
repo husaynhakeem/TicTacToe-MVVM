@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TicTacToe-MVVM</string>
+    <string name="player1_hint">Player 1</string>
+    <string name="player2_hint">Player 2</string>
+    <string name="game_dialog_title">New game</string>
+    <string name="done">Done</string>
+    <string name="game_dialog_empty_name">Name mustn\'t be empty</string>
+    <string name="game_dialog_same_names">Names mustn\'t be the same</string>
 </resources>

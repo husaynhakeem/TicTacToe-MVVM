@@ -45,6 +45,7 @@ android {
 
 dependencies {
     compile supportDependencies.appCompat
+    compile supportDependencies.design
     compile supportDependencies.gridLayout
 
     testCompile testingDependencies.junit

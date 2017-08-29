@@ -41,6 +41,11 @@ public class GameActivity extends AppCompatActivity implements Observer {
 
 
     private void promptForPlayers() {
+
+    }
+
+
+    public void onPlayersSet(String player1, String player2) {
     }
 
 

@@ -13,6 +13,7 @@ ext {
     // Dependencies
     supportDependencies = [
             appCompat  : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            design     : buildDependency(supportPackage, 'design', supportVersion),
             gridLayout : buildDependency(supportPackage, 'gridlayout-v7', supportVersion)
     ]
 
