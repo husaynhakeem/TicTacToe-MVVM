@@ -65,7 +65,7 @@ public class GameVerticalCellsShould {
         Cell anotherCell = new Cell(anotherPlayer);
         game.cells[0][0] = cell;
         game.cells[1][0] = cell;
-        game.cells[2][1] = anotherCell;
+        game.cells[2][0] = anotherCell;
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
         assertEquals(false, hasThreeSameVerticalCells);
     }
