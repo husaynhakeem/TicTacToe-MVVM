@@ -11,7 +11,18 @@ public class Game {
 
     public Player player1;
     public Player player2;
+
+    public Player currentPlayer = player1;
+    public String currentValue;
+
+    public Player winner;
+
     public Cell[][] cells;
+
+
+    public Game() {
+        cells = new Cell[BOARD_SIZE][BOARD_SIZE];
+    }
 
 
     public Game(Player player1, Player player2) {
@@ -87,5 +98,19 @@ public class Game {
                 return false;
 
         return true;
+    }
+
+
+    public void restart() {
+        player1 = null;
+        player2 = null;
+        currentPlayer = null;
+        currentValue = null;
+        cells = null;
+    }
+
+
+    public void switchPlayer() {
+        currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 }

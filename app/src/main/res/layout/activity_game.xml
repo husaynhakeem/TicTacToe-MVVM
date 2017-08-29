@@ -15,7 +15,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[0][0]}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 0)}"
+            android:text='@{gameViewModel.cells["00"]}'
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="1"
@@ -23,7 +24,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[0][1]}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 1)}"
+            android:text='@{gameViewModel.cells["01"]}'
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="1"
@@ -31,7 +33,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[0][2].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 2)}"
+            android:text='@{gameViewModel.cells["02"]}'
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="1"
@@ -39,7 +42,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[1][0].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 0)}"
+            android:text='@{gameViewModel.cells["10"]}'
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="2"
@@ -47,7 +51,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[1][1].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 1)}"
+            android:text='@{gameViewModel.cells["11"]}'
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="2"
@@ -55,7 +60,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[1][2].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 2)}"
+            android:text='@{gameViewModel.cells["12"]}'
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="2"
@@ -63,7 +69,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[2][0].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 0)}"
+            android:text='@{gameViewModel.cells["20"]}'
             app:layout_column="1"
             app:layout_columnWeight="1"
             app:layout_row="3"
@@ -71,7 +78,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[2][1].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 1)}"
+            android:text='@{gameViewModel.cells["21"]}'
             app:layout_column="2"
             app:layout_columnWeight="1"
             app:layout_row="3"
@@ -79,7 +87,8 @@
 
         <TextView
             style="@style/CellTextView"
-            android:text="@{gameViewModel.game.cells[2][2].value}"
+            android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 2)}"
+            android:text='@{gameViewModel.cells["22"]}'
             app:layout_column="3"
             app:layout_columnWeight="1"
             app:layout_row="3"
