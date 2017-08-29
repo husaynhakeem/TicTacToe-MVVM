@@ -2,7 +2,6 @@ package husaynhakeem.io.tictactoe_mvvm.viewmodel;
 
 
 import android.databinding.ObservableArrayMap;
-import android.util.Log;
 
 import java.util.Observable;
 
@@ -35,18 +34,15 @@ public class GameViewModel extends Observable {
     public void onClickedCellAt(int row, int column) {
         game.cells[row][column] = new Cell(game.currentPlayer);
         cells.put(stringFromNumbers(row, column), game.currentPlayer.value);
-        if (game.hasGameEnded()) {
-            game.winner = game.currentPlayer;
-            Log.e(TAG, "Winner is: " + game.winner.name);
-            setChanged();
-            notifyObservers(game.winner.name);
-        }
+        if (game.hasGameEnded())
+            onGameHasEnded();
         game.switchPlayer();
     }
 
 
-    public void reset() {
-        cells.clear();
-        game.restart();
+    private void onGameHasEnded() {
+        setChanged();
+        notifyObservers(game.currentPlayer.name);
+        game.reset();
     }
 }

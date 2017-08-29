@@ -12,9 +12,6 @@ public class Game {
     public Player player2;
 
     public Player currentPlayer = player1;
-    public String currentValue;
-
-    public Player winner;
 
     public Cell[][] cells;
 
@@ -93,16 +90,15 @@ public class Game {
     }
 
 
-    public void restart() {
-        player1 = null;
-        player2 = null;
-        currentPlayer = null;
-        currentValue = null;
-        cells = null;
+    public void switchPlayer() {
+        currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
 
 
-    public void switchPlayer() {
-        currentPlayer = currentPlayer == player1 ? player2 : player1;
+    public void reset() {
+        player1 = null;
+        player2 = null;
+        currentPlayer = null;
+        cells = null;
     }
 }
