@@ -1,7 +1,6 @@
 package husaynhakeem.io.tictactoe_mvvm.model;
 
 
-import android.text.TextUtils;
 import android.util.Log;
 
 public class Game {
@@ -89,12 +88,12 @@ public class Game {
             return false;
 
         for (Cell cell : cells)
-            if (cell == null || TextUtils.isEmpty(cell.value))
+            if (cell == null || cell.player.value == null || cell.player.value.length() == 0)
                 return false;
 
         Cell comparisonBase = cells[0];
         for (int i = 1; i < cells.length; i++)
-            if (!comparisonBase.value.equals(cells[i].value))
+            if (!comparisonBase.player.value.equals(cells[i].player.value))
                 return false;
 
         return true;

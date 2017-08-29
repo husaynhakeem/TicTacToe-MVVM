@@ -33,7 +33,7 @@ public class GameViewModel extends Observable {
 
 
     public void onClickedCellAt(int row, int column) {
-        game.cells[row][column] = new Cell(game.currentPlayer, game.currentValue);
+        game.cells[row][column] = new Cell(game.currentPlayer);
         cells.put(stringFromNumbers(row, column), game.currentPlayer.value);
         if (game.hasGameEnded()) {
             game.winner = game.currentPlayer;
