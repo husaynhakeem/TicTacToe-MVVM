@@ -12,6 +12,7 @@ public class Game {
     public Player player2;
 
     public Player currentPlayer = player1;
+    public Player winner = null;
 
     public Cell[][] cells;
 
@@ -22,7 +23,17 @@ public class Game {
 
 
     public boolean hasGameEnded() {
-        return hasThreeSameHorizontalCells() || hasThreeSameVerticalCells() || hasThreeSameDiagonalCells();
+        if (hasThreeSameHorizontalCells() || hasThreeSameVerticalCells() || hasThreeSameDiagonalCells()) {
+            winner = currentPlayer;
+            return true;
+        }
+
+        if (isBoardFull()) {
+            winner = null;
+            return false;
+        }
+
+        return false;
     }
 
 
@@ -61,6 +72,15 @@ public class Game {
             Log.e(TAG, e.getMessage());
             return false;
         }
+    }
+
+
+    public boolean isBoardFull() {
+        for (Cell[] row : cells)
+            for (Cell cell : row)
+                if (cell.isEmpty())
+                    return false;
+        return true;
     }
 
 
