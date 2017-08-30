@@ -23,7 +23,6 @@ public class GameActivity extends AppCompatActivity implements Observer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setUpObserver(gameViewModel);
         promptForPlayers();
     }
 
@@ -43,11 +42,7 @@ public class GameActivity extends AppCompatActivity implements Observer {
         activityGameBinding = DataBindingUtil.setContentView(this, R.layout.activity_game);
         gameViewModel = new GameViewModel(player1, player2);
         activityGameBinding.setGameViewModel(gameViewModel);
-    }
-
-
-    private void setUpObserver(Observable observable) {
-        observable.addObserver(this);
+        gameViewModel.addObserver(this);
     }
 
 

@@ -32,11 +32,14 @@ public class GameEndDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         initViews();
-        return new AlertDialog.Builder(getContext())
+        AlertDialog alertDialog = new AlertDialog.Builder(getContext())
                 .setView(rootView)
                 .setCancelable(false)
                 .setPositiveButton(R.string.done, ((dialog, which) -> onNewGame()))
                 .create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
+        return alertDialog;
     }
 
 
