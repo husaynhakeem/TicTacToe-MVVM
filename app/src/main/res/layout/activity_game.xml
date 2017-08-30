@@ -11,10 +11,13 @@
 
     <android.support.v7.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:padding="32dp">
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_00"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 0)}"
             android:text='@{gameViewModel.cells["00"]}'
             app:layout_column="1"
@@ -24,6 +27,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_01"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 1)}"
             android:text='@{gameViewModel.cells["01"]}'
             app:layout_column="2"
@@ -33,6 +37,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_02"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(0, 2)}"
             android:text='@{gameViewModel.cells["02"]}'
             app:layout_column="3"
@@ -42,6 +47,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_10"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 0)}"
             android:text='@{gameViewModel.cells["10"]}'
             app:layout_column="1"
@@ -51,6 +57,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_11"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 1)}"
             android:text='@{gameViewModel.cells["11"]}'
             app:layout_column="2"
@@ -60,6 +67,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_12"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(1, 2)}"
             android:text='@{gameViewModel.cells["12"]}'
             app:layout_column="3"
@@ -69,6 +77,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_20"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 0)}"
             android:text='@{gameViewModel.cells["20"]}'
             app:layout_column="1"
@@ -78,6 +87,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_21"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 1)}"
             android:text='@{gameViewModel.cells["21"]}'
             app:layout_column="2"
@@ -87,6 +97,7 @@
 
         <TextView
             style="@style/CellTextView"
+            android:background="@drawable/cell_22"
             android:onClick="@{() -> gameViewModel.onClickedCellAt(2, 2)}"
             android:text='@{gameViewModel.cells["22"]}'
             app:layout_column="3"

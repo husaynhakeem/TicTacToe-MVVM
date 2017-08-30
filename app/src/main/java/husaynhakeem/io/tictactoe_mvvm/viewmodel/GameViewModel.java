@@ -21,6 +21,14 @@ public class GameViewModel extends Observable {
     public GameViewModel(String player1, String player2) {
         game = new Game();
         beginGame(new Player(player1, "x"), new Player(player2, "o"));
+        initCells();
+    }
+
+
+    private void initCells() {
+        for (int i = 0; i < cells.size(); i++) {
+            cells.setValueAt(i, " ");
+        }
     }
 
 
