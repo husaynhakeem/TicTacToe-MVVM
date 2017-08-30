@@ -14,6 +14,7 @@ import static husaynhakeem.io.tictactoe_mvvm.utilities.StringUtility.stringFromN
 public class GameViewModel extends Observable {
 
     private static final String TAG = GameViewModel.class.getSimpleName();
+    private static final String NO_WINNER = "No one";
     public ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
     public Game game;
 
@@ -42,7 +43,7 @@ public class GameViewModel extends Observable {
 
     private void onGameHasEnded() {
         setChanged();
-        notifyObservers(game.currentPlayer.name);
+        notifyObservers(game.winner == null ? NO_WINNER : game.winner.name);
         game.reset();
     }
 }

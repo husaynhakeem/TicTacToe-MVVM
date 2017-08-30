@@ -30,7 +30,7 @@ public class Game {
 
         if (isBoardFull()) {
             winner = null;
-            return false;
+            return true;
         }
 
         return false;
@@ -78,7 +78,7 @@ public class Game {
     public boolean isBoardFull() {
         for (Cell[] row : cells)
             for (Cell cell : row)
-                if (cell.isEmpty())
+                if (cell == null ||cell.isEmpty())
                     return false;
         return true;
     }
