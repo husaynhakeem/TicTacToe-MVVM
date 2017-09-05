@@ -33,4 +33,14 @@ public class GameBeginDialogShould {
         clickDialogPositiveButton();
         assertDisplayed(R.string.game_dialog_empty_name);
     }
+
+    @Test
+    public void display_same_names_message_if_names_same() throws Exception {
+        Intent intent = new Intent(context, GameActivity.class);
+        activityRule.launchActivity(intent);
+        writeToEditText(R.id.et_player1, "husaynhakeem");
+        writeToEditText(R.id.et_player2, "husaynhakeem");
+        clickDialogPositiveButton();
+        assertDisplayed(R.string.game_dialog_same_names);
+    }
 }
