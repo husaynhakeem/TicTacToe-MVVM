@@ -12,6 +12,7 @@ import org.junit.Test;
 import husaynhakeem.io.tictactoe_mvvm.view.GameActivity;
 
 import static com.schibsted.spain.barista.BaristaAssertions.assertDisplayed;
+import static com.schibsted.spain.barista.BaristaAssertions.assertNotExist;
 import static com.schibsted.spain.barista.BaristaDialogActions.clickDialogPositiveButton;
 import static com.schibsted.spain.barista.BaristaEditTextActions.writeToEditText;
 
@@ -51,5 +52,15 @@ public class GameBeginDialogShould {
         writeToEditText(R.id.et_player2, "husaynhakeem");
         clickDialogPositiveButton();
         assertDisplayed(R.string.game_dialog_empty_name);
+    }
+
+    @Test
+    public void close_dialog_after_names_valid() throws Exception {
+        Intent intent = new Intent(context, GameActivity.class);
+        activityRule.launchActivity(intent);
+        writeToEditText(R.id.et_player1, "husaynhakeem 1");
+        writeToEditText(R.id.et_player2, "husaynhakeem 2");
+        clickDialogPositiveButton();
+        assertNotExist(R.id.layout_player1);
     }
 }
