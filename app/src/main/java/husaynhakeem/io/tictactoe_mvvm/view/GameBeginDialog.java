@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 
 import husaynhakeem.io.tictactoe_mvvm.R;
 
@@ -46,13 +47,15 @@ public class GameBeginDialog extends DialogFragment {
                 .setView(rootView)
                 .setTitle(R.string.game_dialog_title)
                 .setCancelable(false)
-                .setPositiveButton(R.string.done, (dialog, which) -> onDoneClicked())
+                .setPositiveButton(R.string.done, null)
                 .create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setCancelable(false);
+        alertDialog.setOnShowListener(dialog -> {
+            onDialogShow(alertDialog);
+        });
         return alertDialog;
     }
-
 
     private void initViews() {
         rootView = LayoutInflater.from(getContext())
@@ -67,8 +70,16 @@ public class GameBeginDialog extends DialogFragment {
     }
 
 
+    private void onDialogShow(AlertDialog dialog) {
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        positiveButton.setOnClickListener(v -> {
+            onDoneClicked();
+        });
+    }
+
+
     private void onDoneClicked() {
-        if (isAValidName(player1Layout, player1) && isAValidName(player2Layout, player2)) {
+        if (isAValidName(player1Layout, player1) & isAValidName(player2Layout, player2)) {
             activity.onPlayersSet(player1, player2);
             dismiss();
         }
