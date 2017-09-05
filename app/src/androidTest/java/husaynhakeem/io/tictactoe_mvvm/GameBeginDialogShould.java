@@ -1,26 +1,36 @@
 package husaynhakeem.io.tictactoe_mvvm;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.ActivityTestRule;
+
+import org.junit.Rule;
+import org.junit.Test;
+
+import husaynhakeem.io.tictactoe_mvvm.view.GameActivity;
+
+import static com.schibsted.spain.barista.BaristaAssertions.assertDisplayed;
+import static com.schibsted.spain.barista.BaristaDialogActions.clickDialogPositiveButton;
+import static com.schibsted.spain.barista.BaristaEditTextActions.writeToEditText;
+
 public class GameBeginDialogShould {
 
 
-    public void displayEmptyNameErrorIfPlayerNameEmpty() throws Exception {
-    }
+    @Rule
+    public ActivityTestRule<GameActivity> activityRule = new ActivityTestRule<>(
+            GameActivity.class, true, false);
 
+    Context context = InstrumentationRegistry.getTargetContext();
 
-    public void displaySamePlayerNamesErrorWhenNamesIdentical() throws Exception {
-
-    }
-
-
-    public void dismissDialogWhenNamesValid() throws Exception {
-
-    }
-
-
-    @org.junit.Test
-    public void test() throws Exception {
-
-
+    @Test
+    public void display_empty_names_message_if_names_empty() throws Exception {
+        Intent intent = new Intent(context, GameActivity.class);
+        activityRule.launchActivity(intent);
+        writeToEditText(R.id.et_player1, "");
+        writeToEditText(R.id.et_player2, "");
+        clickDialogPositiveButton();
+        assertDisplayed(R.string.game_dialog_empty_name);
     }
 }
