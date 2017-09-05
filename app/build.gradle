@@ -47,6 +47,9 @@ dependencies {
     compile supportDependencies.appCompat
     compile supportDependencies.design
     compile supportDependencies.gridLayout
+    compile supportDependencies.annotations
 
     testCompile testingDependencies.junit
+    testCompile testingDependencies.espressoCore
+    testCompile testingDependencies.runner
 }

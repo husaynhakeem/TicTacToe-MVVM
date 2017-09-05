@@ -2,23 +2,31 @@ ext {
 
     // Versions
     supportVersion = '25.3.1'
+    supportAnnotationsVersion = '22.2.0'
     junitVersion = '4.12'
+    espressoVersion = '3.0.1'
+    testRunnerVersion = '1.0.1'
 
 
     // Packages
     supportPackage = 'com.android.support'
     junitPackage = 'junit'
+    espressoPackage = 'com.android.support.test.espresso'
+    testRunnerPackage = 'com.android.support.test'
 
 
     // Dependencies
     supportDependencies = [
             appCompat  : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
             design     : buildDependency(supportPackage, 'design', supportVersion),
-            gridLayout : buildDependency(supportPackage, 'gridlayout-v7', supportVersion)
+            gridLayout : buildDependency(supportPackage, 'gridlayout-v7', supportVersion),
+            annotations : buildDependency(supportPackage, 'support-annotations', supportAnnotationsVersion)
     ]
 
     testingDependencies = [
-            junit : buildDependency(junitPackage, 'junit', junitVersion)
+            junit : buildDependency(junitPackage, 'junit', junitVersion),
+            espressoCore : buildDependency(espressoPackage, 'espresso-core', espressoVersion),
+            runner : buildDependency(testRunnerPackage, 'runner', testRunnerVersion)
     ]
 }
 
