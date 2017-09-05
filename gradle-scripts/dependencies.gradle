@@ -4,8 +4,7 @@ ext {
     supportVersion = '25.3.1'
     supportAnnotationsVersion = '22.2.0'
     junitVersion = '4.12'
-    espressoVersion = '3.0.1'
-    testRunnerVersion = '1.0.1'
+    espressoVersion = '2.2.2'
 
 
     // Packages
@@ -26,7 +25,6 @@ ext {
     testingDependencies = [
             junit : buildDependency(junitPackage, 'junit', junitVersion),
             espressoCore : buildDependency(espressoPackage, 'espresso-core', espressoVersion),
-            runner : buildDependency(testRunnerPackage, 'runner', testRunnerVersion)
     ]
 }
 

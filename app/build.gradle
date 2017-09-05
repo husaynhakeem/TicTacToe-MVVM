@@ -50,6 +50,7 @@ dependencies {
     compile supportDependencies.annotations
 
     testCompile testingDependencies.junit
-    testCompile testingDependencies.espressoCore
-    testCompile testingDependencies.runner
+    androidTestCompile(testingDependencies.espressoCore) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
 }
