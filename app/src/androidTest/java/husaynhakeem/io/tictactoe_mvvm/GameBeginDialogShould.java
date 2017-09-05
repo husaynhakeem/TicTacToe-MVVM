@@ -17,7 +17,6 @@ import static com.schibsted.spain.barista.BaristaEditTextActions.writeToEditText
 
 public class GameBeginDialogShould {
 
-
     @Rule
     public ActivityTestRule<GameActivity> activityRule = new ActivityTestRule<>(
             GameActivity.class, true, false);
@@ -42,5 +41,15 @@ public class GameBeginDialogShould {
         writeToEditText(R.id.et_player2, "husaynhakeem");
         clickDialogPositiveButton();
         assertDisplayed(R.string.game_dialog_same_names);
+    }
+
+    @Test
+    public void display_empty_name_message_if_one_name_empty() throws Exception {
+        Intent intent = new Intent(context, GameActivity.class);
+        activityRule.launchActivity(intent);
+        writeToEditText(R.id.et_player1, "");
+        writeToEditText(R.id.et_player2, "husaynhakeem");
+        clickDialogPositiveButton();
+        assertDisplayed(R.string.game_dialog_empty_name);
     }
 }
