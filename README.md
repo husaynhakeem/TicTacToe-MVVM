@@ -7,7 +7,9 @@ This is a Sample android application based on the Tic-Tac-Toe game which can be 
 - [Junit](https://developer.android.com/training/testing/unit-testing/local-unit-tests.html)
 
 ## Screenshots
-
+![alt text](https://github.com/Husaynhakeem/TicTacToe-MVVM/blob/master/app/screenshots/begin_game.png)
+![alt text](https://github.com/Husaynhakeem/TicTacToe-MVVM/blob/master/app/screenshots/game_play.png)
+![alt text](https://github.com/Husaynhakeem/TicTacToe-MVVM/blob/master/app/screenshots/end_game.png)
 
 ## Developed by
 Husayn Hakeem - [husaynhakeem@gmail.com](husaynhakeem@gmail.com)
