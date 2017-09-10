@@ -4,21 +4,21 @@
     <item>
         <shape android:shape="rectangle">
             <padding android:top="2dp" />
-            <solid android:color="@android:color/black" />
+            <solid android:color="@color/cell_color" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
             <padding android:left="2dp" />
-            <solid android:color="@android:color/black" />
+            <solid android:color="@color/cell_color" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
             <padding android:right="2dp" />
-            <solid android:color="@android:color/black" />
+            <solid android:color="@color/cell_color" />
         </shape>
     </item>
 
