@@ -32,12 +32,14 @@ public class GameViewModel extends Observable {
     }
 
 
-    public void onClickedCellAt(int row, int column) {
-        game.cells[row][column] = new Cell(game.currentPlayer);
-        cells.put(stringFromNumbers(row, column), game.currentPlayer.value);
-        if (game.hasGameEnded())
-            onGameHasEnded();
-        game.switchPlayer();
+public void onClickedCellAt(int row, int column) {
+        if (game.cells[row][column] == null) {
+            game.cells[row][column] = new Cell(game.currentPlayer);
+            cells.put(stringFromNumbers(row, column), game.currentPlayer.value);
+            if (game.hasGameEnded())
+                onGameHasEnded();
+            game.switchPlayer();
+        }
     }
 
 
