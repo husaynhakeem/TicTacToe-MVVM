@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
     defaultConfig {
         applicationId "husaynhakeem.io.tictactoe_mvvm"
         minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
+        targetSdkVersion 27
+        versionCode 2
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -25,12 +25,8 @@ android {
     }
 
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
-    }
-
-    dexOptions {
-        javaMaxHeapSize "2g"
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
 
     packagingOptions {
@@ -44,13 +40,13 @@ android {
 }
 
 dependencies {
-    compile supportDependencies.appCompat
-    compile supportDependencies.design
-    compile supportDependencies.gridLayout
-    compile supportDependencies.annotations
-
-    testCompile testingDependencies.junit
-    androidTestCompile(testingDependencies.barista) {
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.design
+    implementation supportDependencies.gridLayout
+    implementation supportDependencies.annotations
+    implementation architectureComponentDependencies.viewModelAndLiveData
+    testImplementation testingDependencies.junit
+    androidTestImplementation(testingDependencies.barista) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 }
