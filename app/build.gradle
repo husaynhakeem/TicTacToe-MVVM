@@ -20,6 +20,10 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     dataBinding {
         enabled = true
     }
@@ -46,6 +50,7 @@ dependencies {
     implementation supportDependencies.annotations
     implementation architectureComponentDependencies.viewModelAndLiveData
     testImplementation testingDependencies.junit
+    testImplementation testingDependencies.liveDataTestHelper
     androidTestImplementation(testingDependencies.barista) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }

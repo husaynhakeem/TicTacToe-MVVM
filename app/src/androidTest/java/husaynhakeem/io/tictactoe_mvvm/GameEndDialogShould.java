@@ -8,6 +8,7 @@ import android.support.test.rule.ActivityTestRule;
 import org.junit.Rule;
 import org.junit.Test;
 
+import husaynhakeem.io.tictactoe_mvvm.model.Player;
 import husaynhakeem.io.tictactoe_mvvm.view.GameActivity;
 
 import static com.schibsted.spain.barista.BaristaAssertions.assertDisplayed;
@@ -23,8 +24,7 @@ public class GameEndDialogShould {
     public ActivityTestRule<GameActivity> activityRule = new ActivityTestRule<>(
             GameActivity.class, true, false);
 
-    Context context = InstrumentationRegistry.getTargetContext();
-
+    private Context context = InstrumentationRegistry.getTargetContext();
 
     @Test
     public void display_winner_when_game_ends() throws Exception {
@@ -51,6 +51,6 @@ public class GameEndDialogShould {
 
     private void givenGameEnded() {
         GameActivity activity = activityRule.getActivity();
-        activity.update(null, "husaynhakeem");
+        activity.onGameWinnerChanged(new Player("husaynhakeem", "x"));
     }
 }

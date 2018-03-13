@@ -16,14 +16,12 @@ public class GameDiagonalCellsShould {
     private Player player;
     private Player anotherPlayer;
 
-
     @Before
     public void setUp() throws Exception {
-        game = new Game();
-        player = new Player("Husayn", "x");
-        anotherPlayer = new Player("Yasin", "o");
+        game = new Game("Husayn", "Yasin");
+        player = game.player1;
+        anotherPlayer = game.player2;
     }
-
 
     @Test
     public void returnTrueIfHasThreeSameDiagonalCellsFromLeft() throws Exception {
@@ -35,7 +33,6 @@ public class GameDiagonalCellsShould {
         Assert.assertEquals(true, hasThreeSameDiagonalCells);
     }
 
-
     @Test
     public void returnTrueIfHasThreeSameDiagonalCellsFromRight() throws Exception {
         Cell cell = new Cell(player);
@@ -45,7 +42,6 @@ public class GameDiagonalCellsShould {
         boolean hasThreeSameDiagonalCells = game.hasThreeSameDiagonalCells();
         Assert.assertEquals(true, hasThreeSameDiagonalCells);
     }
-
 
     @Test
     public void returnFalseIfDoesNotHaveThreeSameDiagonalCells() throws Exception {

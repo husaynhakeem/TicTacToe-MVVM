@@ -1,7 +1,10 @@
 package husaynhakeem.io.tictactoe_mvvm.game;
 
 
+import android.arch.core.executor.testing.InstantTaskExecutorRule;
+
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import husaynhakeem.io.tictactoe_mvvm.model.Cell;
@@ -12,21 +15,17 @@ import static org.junit.Assert.assertEquals;
 
 public class GameShould {
 
+    @Rule
+    public InstantTaskExecutorRule instantTaskExecutorRule = new InstantTaskExecutorRule();
+
     private Game game;
     private Player player;
-    private Player anotherPlayer;
-
 
     @Before
     public void setUp() throws Exception {
-        player = new Player("Husayn", "x");
-        anotherPlayer = new Player("Yasin", "o");
-
-        game = new Game();
-        game.player1 = player;
-        game.player2 = anotherPlayer;
+        game = new Game("Husayn", "Yasin");
+        player = game.player1;
     }
-
 
     @Test
     public void endGameIfHasThreeSameHorizontalCells() throws Exception {
@@ -38,7 +37,6 @@ public class GameShould {
         assertEquals(true, hasGameEnded);
     }
 
-
     @Test
     public void endGameIfHasThreeSameVerticalCells() throws Exception {
         Cell cell = new Cell(player);
@@ -48,7 +46,6 @@ public class GameShould {
         boolean hasGameEnded = game.hasGameEnded();
         assertEquals(true, hasGameEnded);
     }
-
 
     @Test
     public void endGameIfHasThreeSameDiagonalCells() throws Exception {
@@ -60,18 +57,17 @@ public class GameShould {
         assertEquals(true, hasGameEnded);
     }
 
-
     @Test
     public void endGameIfBoardIsFull() throws Exception {
-        Cell cell1 = new Cell(new Player("1", "1"));
-        Cell cell2 = new Cell(new Player("2", "2"));
-        Cell cell3 = new Cell(new Player("3", "3"));
-        Cell cell4 = new Cell(new Player("4", "4"));
-        Cell cell5 = new Cell(new Player("5", "5"));
-        Cell cell6 = new Cell(new Player("6", "6"));
-        Cell cell7 = new Cell(new Player("7", "7"));
-        Cell cell8 = new Cell(new Player("8", "8"));
-        Cell cell9 = new Cell(new Player("9", "9"));
+        Cell cell1 = new Cell(new Player("1", "x"));
+        Cell cell2 = new Cell(new Player("2", "o"));
+        Cell cell3 = new Cell(new Player("1", "x"));
+        Cell cell4 = new Cell(new Player("2", "o"));
+        Cell cell5 = new Cell(new Player("1", "x"));
+        Cell cell6 = new Cell(new Player("2", "o"));
+        Cell cell7 = new Cell(new Player("1", "x"));
+        Cell cell8 = new Cell(new Player("2", "o"));
+        Cell cell9 = new Cell(new Player("1", "x"));
 
         game.cells[0][0] = cell1;
         game.cells[0][1] = cell2;
@@ -86,7 +82,6 @@ public class GameShould {
         boolean isBoardFull = game.isBoardFull();
         assertEquals(true, isBoardFull);
     }
-
 
     @Test
     public void switchFromPlayer1ToPlayer2() throws Exception {

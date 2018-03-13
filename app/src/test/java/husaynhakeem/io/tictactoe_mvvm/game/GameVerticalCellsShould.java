@@ -12,19 +12,16 @@ import static org.junit.Assert.assertEquals;
 
 public class GameVerticalCellsShould {
 
-
     private Game game;
     private Player player;
     private Player anotherPlayer;
 
-
     @Before
     public void setUp() throws Exception {
-        game = new Game();
-        player = new Player("Husayn", "x");
-        anotherPlayer = new Player("Yasin", "o");
+        game = new Game("Husayn", "Yasin");
+        player = game.player1;
+        anotherPlayer = game.player2;
     }
-
 
     @Test
     public void returnTrueIfHasThreeSameVerticalCellsAtColumn1() throws Exception {
@@ -36,7 +33,6 @@ public class GameVerticalCellsShould {
         assertEquals(true, hasThreeSameVerticalCells);
     }
 
-
     @Test
     public void returnTrueIfHasThreeSameVerticalCellsAtColumn2() throws Exception {
         Cell cell = new Cell(player);
@@ -47,7 +43,6 @@ public class GameVerticalCellsShould {
         assertEquals(true, hasThreeSameVerticalCells);
     }
 
-
     @Test
     public void returnTrueIfHasThreeSameVerticalCellsAtColumn3() throws Exception {
         Cell cell = new Cell(player);
@@ -57,7 +52,6 @@ public class GameVerticalCellsShould {
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
         assertEquals(true, hasThreeSameVerticalCells);
     }
-
 
     @Test
     public void returnFalseIfDoesNotHaveThreeSameVerticalCells() throws Exception {

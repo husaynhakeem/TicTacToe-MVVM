@@ -22,7 +22,7 @@ public class GameBeginDialogShould {
     public ActivityTestRule<GameActivity> activityRule = new ActivityTestRule<>(
             GameActivity.class, true, false);
 
-    Context context = InstrumentationRegistry.getTargetContext();
+    private Context context = InstrumentationRegistry.getTargetContext();
 
     @Test
     public void display_empty_names_message_if_names_empty() throws Exception {

@@ -1,6 +1,5 @@
 package husaynhakeem.io.tictactoe_mvvm;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
@@ -17,15 +16,14 @@ import static com.schibsted.spain.barista.BaristaClickActions.click;
 
 public class GameActivityShould {
 
-
     @Rule
     public ActivityTestRule<GameActivity> activityRule = new ActivityTestRule<>(
             GameActivity.class, true, false);
 
-    Context context = InstrumentationRegistry.getTargetContext();
+    private Context context = InstrumentationRegistry.getTargetContext();
 
-    Player player1 = new Player("husaynhakeem 1", "x");
-    Player player2 = new Player("husaynhakeem 2", "o");
+    private Player player1 = new Player("Husayn", "x");
+    private Player player2 = new Player("Yasin", "o");
 
     @Test
     public void end_game_when_one_player_wins() throws Exception {

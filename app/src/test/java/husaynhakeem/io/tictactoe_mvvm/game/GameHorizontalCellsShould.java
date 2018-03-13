@@ -12,19 +12,16 @@ import static org.junit.Assert.assertEquals;
 
 public class GameHorizontalCellsShould {
 
-
-    Game game;
-    Player player;
-    Player anotherPlayer;
-
+    private Game game;
+    private Player player;
+    private Player anotherPlayer;
 
     @Before
     public void setUp() throws Exception {
-        game = new Game();
-        player = new Player("Husayn", "x");
-        anotherPlayer = new Player("Yasin", "o");
+        game = new Game("Husayn", "Yasin");
+        player = game.player1;
+        anotherPlayer = game.player2;
     }
-
 
     @Test
     public void returnTrueIfHasThreeSameHorizontalCellsAtRow1() throws Exception {
@@ -36,7 +33,6 @@ public class GameHorizontalCellsShould {
         assertEquals(true, hasThreeSameHorizontalCells);
     }
 
-
     @Test
     public void returnTrueIfHasThreeSameHorizontalCellsAtRow2() throws Exception {
         Cell cell = new Cell(player);
@@ -47,7 +43,6 @@ public class GameHorizontalCellsShould {
         assertEquals(true, hasThreeSameHorizontalCells);
     }
 
-
     @Test
     public void returnTrueIfHasThreeSameHorizontalCellsAtRow3() throws Exception {
         Cell cell = new Cell(player);
@@ -57,7 +52,6 @@ public class GameHorizontalCellsShould {
         boolean hasThreeSameHorizontalCells = game.hasThreeSameHorizontalCells();
         assertEquals(true, hasThreeSameHorizontalCells);
     }
-
 
     @Test
     public void returnFalseIfDoesNotHaveThreeSameHorizontalCells() throws Exception {

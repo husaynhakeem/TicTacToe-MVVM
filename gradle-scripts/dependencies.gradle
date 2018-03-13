@@ -1,35 +1,35 @@
 ext {
 
     // Versions
-    supportVersion            = '27.0.2'
+    supportVersion = '27.0.2'
     supportAnnotationsVersion = '22.2.0'
-    architectureComponent     = '1.1.0'
-    junitVersion              = '4.12'
-    baristaVersion            = '1.7.0'
-
+    architectureComponentVersion = '1.1.0'
+    junitVersion = '4.12'
+    baristaVersion = '1.7.0'
 
     // Packages
-    supportPackage      = 'com.android.support'
+    supportPackage = 'com.android.support'
     architecturePackage = 'android.arch.lifecycle'
-    junitPackage        = 'junit'
-    baristaPackage      = 'com.schibsted.spain'
-
+    junitPackage = 'junit'
+    baristaPackage = 'com.schibsted.spain'
+    architectureCorePackage = 'android.arch.core'
 
     // Dependencies
     supportDependencies = [
-            appCompat   : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
-            design      : buildDependency(supportPackage, 'design', supportVersion),
-            gridLayout  : buildDependency(supportPackage, 'gridlayout-v7', supportVersion),
-            annotations : buildDependency(supportPackage, 'support-annotations', supportAnnotationsVersion)
+            appCompat  : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            design     : buildDependency(supportPackage, 'design', supportVersion),
+            gridLayout : buildDependency(supportPackage, 'gridlayout-v7', supportVersion),
+            annotations: buildDependency(supportPackage, 'support-annotations', supportAnnotationsVersion)
     ]
 
     architectureComponentDependencies = [
-            viewModelAndLiveData : buildDependency(architecturePackage, 'extensions', architectureComponent)
+            viewModelAndLiveData: buildDependency(architecturePackage, 'extensions', architectureComponentVersion)
     ]
 
     testingDependencies = [
-            junit   : buildDependency(junitPackage, 'junit', junitVersion),
-            barista : buildDependency(baristaPackage, 'barista', baristaVersion)
+            junit             : buildDependency(junitPackage, 'junit', junitVersion),
+            barista           : buildDependency(baristaPackage, 'barista', baristaVersion),
+            liveDataTestHelper: buildDependency(architectureCorePackage, 'core-testing', architectureComponentVersion)
     ]
 }
 
