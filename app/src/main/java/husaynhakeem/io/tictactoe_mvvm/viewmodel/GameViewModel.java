@@ -13,11 +13,12 @@ import static husaynhakeem.io.tictactoe_mvvm.utilities.StringUtility.stringFromN
 
 public class GameViewModel extends ViewModel {
 
-    public ObservableArrayMap<String, String> cells = new ObservableArrayMap<>();
+    public ObservableArrayMap<String, String> cells;
     private Game game;
 
     public void init(String player1, String player2) {
         game = new Game(player1, player2);
+        cells = new ObservableArrayMap<>();
     }
 
     public void onClickedCellAt(int row, int column) {

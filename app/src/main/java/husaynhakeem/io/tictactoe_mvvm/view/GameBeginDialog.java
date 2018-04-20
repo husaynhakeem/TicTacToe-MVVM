@@ -31,13 +31,11 @@ public class GameBeginDialog extends DialogFragment {
     private View rootView;
     private GameActivity activity;
 
-
     public static GameBeginDialog newInstance(GameActivity activity) {
         GameBeginDialog dialog = new GameBeginDialog();
         dialog.activity = activity;
         return dialog;
     }
-
 
     @NonNull
     @Override
@@ -61,14 +59,13 @@ public class GameBeginDialog extends DialogFragment {
         rootView = LayoutInflater.from(getContext())
                 .inflate(R.layout.game_begin_dialog, null, false);
 
-        player1Layout = (TextInputLayout) rootView.findViewById(R.id.layout_player1);
-        player2Layout = (TextInputLayout) rootView.findViewById(R.id.layout_player2);
+        player1Layout = rootView.findViewById(R.id.layout_player1);
+        player2Layout = rootView.findViewById(R.id.layout_player2);
 
-        player1EditText = (TextInputEditText) rootView.findViewById(R.id.et_player1);
-        player2EditText = (TextInputEditText) rootView.findViewById(R.id.et_player2);
+        player1EditText = rootView.findViewById(R.id.et_player1);
+        player2EditText = rootView.findViewById(R.id.et_player2);
         addTextWatchers();
     }
-
 
     private void onDialogShow(AlertDialog dialog) {
         Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
@@ -77,14 +74,12 @@ public class GameBeginDialog extends DialogFragment {
         });
     }
 
-
     private void onDoneClicked() {
         if (isAValidName(player1Layout, player1) & isAValidName(player2Layout, player2)) {
             activity.onPlayersSet(player1, player2);
             dismiss();
         }
     }
-
 
     private boolean isAValidName(TextInputLayout layout, String name) {
         if (TextUtils.isEmpty(name)) {
@@ -103,7 +98,6 @@ public class GameBeginDialog extends DialogFragment {
         layout.setError("");
         return true;
     }
-
 
     private void addTextWatchers() {
         player1EditText.addTextChangedListener(new TextWatcher() {

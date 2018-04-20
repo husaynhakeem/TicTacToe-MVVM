@@ -14,11 +14,9 @@ import husaynhakeem.io.tictactoe_mvvm.R;
 
 public class GameEndDialog extends DialogFragment {
 
-
     private View rootView;
     private GameActivity activity;
     private String winnerName;
-
 
     public static GameEndDialog newInstance(GameActivity activity, String winnerName) {
         GameEndDialog dialog = new GameEndDialog();
@@ -26,7 +24,6 @@ public class GameEndDialog extends DialogFragment {
         dialog.winnerName = winnerName;
         return dialog;
     }
-
 
     @NonNull
     @Override
@@ -42,13 +39,11 @@ public class GameEndDialog extends DialogFragment {
         return alertDialog;
     }
 
-
     private void initViews() {
         rootView = LayoutInflater.from(getContext())
                 .inflate(R.layout.game_end_dialog, null, false);
         ((TextView) rootView.findViewById(R.id.tv_winner)).setText(winnerName);
     }
-
 
     private void onNewGame() {
         dismiss();

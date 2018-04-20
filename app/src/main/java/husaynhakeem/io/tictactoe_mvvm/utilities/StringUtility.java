@@ -10,7 +10,6 @@ public class StringUtility {
         return sNumbers.toString();
     }
 
-
     public static boolean isNullOrEmpty(String value) {
         return value == null || value.length() == 0;
     }
