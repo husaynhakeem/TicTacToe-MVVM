@@ -33,7 +33,7 @@ public class Game {
         }
 
         if (isBoardFull()) {
-            winner = null;
+            winner.setValue(null);
             return true;
         }
 
