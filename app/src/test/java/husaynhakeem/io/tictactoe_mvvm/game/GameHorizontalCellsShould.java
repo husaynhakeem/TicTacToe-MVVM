@@ -8,7 +8,8 @@ import husaynhakeem.io.tictactoe_mvvm.model.Cell;
 import husaynhakeem.io.tictactoe_mvvm.model.Game;
 import husaynhakeem.io.tictactoe_mvvm.model.Player;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class GameHorizontalCellsShould {
 
@@ -30,7 +31,7 @@ public class GameHorizontalCellsShould {
         game.cells[0][1] = cell;
         game.cells[0][2] = cell;
         boolean hasThreeSameHorizontalCells = game.hasThreeSameHorizontalCells();
-        assertEquals(true, hasThreeSameHorizontalCells);
+        assertTrue(hasThreeSameHorizontalCells);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class GameHorizontalCellsShould {
         game.cells[1][1] = cell;
         game.cells[1][2] = cell;
         boolean hasThreeSameHorizontalCells = game.hasThreeSameHorizontalCells();
-        assertEquals(true, hasThreeSameHorizontalCells);
+        assertTrue(hasThreeSameHorizontalCells);
     }
 
     @Test
@@ -50,7 +51,7 @@ public class GameHorizontalCellsShould {
         game.cells[2][1] = cell;
         game.cells[2][2] = cell;
         boolean hasThreeSameHorizontalCells = game.hasThreeSameHorizontalCells();
-        assertEquals(true, hasThreeSameHorizontalCells);
+        assertTrue(hasThreeSameHorizontalCells);
     }
 
     @Test
@@ -61,6 +62,6 @@ public class GameHorizontalCellsShould {
         game.cells[0][1] = cell;
         game.cells[0][2] = anotherCell;
         boolean hasThreeSameHorizontalCells = game.hasThreeSameHorizontalCells();
-        assertEquals(false, hasThreeSameHorizontalCells);
+        assertFalse(hasThreeSameHorizontalCells);
     }
 }

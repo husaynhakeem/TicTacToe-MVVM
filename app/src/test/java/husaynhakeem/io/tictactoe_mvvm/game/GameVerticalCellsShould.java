@@ -8,7 +8,8 @@ import husaynhakeem.io.tictactoe_mvvm.model.Cell;
 import husaynhakeem.io.tictactoe_mvvm.model.Game;
 import husaynhakeem.io.tictactoe_mvvm.model.Player;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class GameVerticalCellsShould {
 
@@ -30,7 +31,7 @@ public class GameVerticalCellsShould {
         game.cells[1][0] = cell;
         game.cells[2][0] = cell;
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
-        assertEquals(true, hasThreeSameVerticalCells);
+        assertTrue(hasThreeSameVerticalCells);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class GameVerticalCellsShould {
         game.cells[1][1] = cell;
         game.cells[2][1] = cell;
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
-        assertEquals(true, hasThreeSameVerticalCells);
+        assertTrue(hasThreeSameVerticalCells);
     }
 
     @Test
@@ -50,7 +51,7 @@ public class GameVerticalCellsShould {
         game.cells[1][2] = cell;
         game.cells[2][2] = cell;
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
-        assertEquals(true, hasThreeSameVerticalCells);
+        assertTrue(hasThreeSameVerticalCells);
     }
 
     @Test
@@ -61,6 +62,6 @@ public class GameVerticalCellsShould {
         game.cells[1][0] = cell;
         game.cells[2][0] = anotherCell;
         boolean hasThreeSameVerticalCells = game.hasThreeSameVerticalCells();
-        assertEquals(false, hasThreeSameVerticalCells);
+        assertFalse(hasThreeSameVerticalCells);
     }
 }
