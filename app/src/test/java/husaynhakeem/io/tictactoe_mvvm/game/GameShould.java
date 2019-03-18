@@ -12,6 +12,7 @@ import husaynhakeem.io.tictactoe_mvvm.model.Game;
 import husaynhakeem.io.tictactoe_mvvm.model.Player;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GameShould {
 
@@ -34,7 +35,7 @@ public class GameShould {
         game.cells[0][1] = cell;
         game.cells[0][2] = cell;
         boolean hasGameEnded = game.hasGameEnded();
-        assertEquals(true, hasGameEnded);
+        assertTrue(hasGameEnded);
     }
 
     @Test
@@ -44,7 +45,7 @@ public class GameShould {
         game.cells[1][0] = cell;
         game.cells[2][0] = cell;
         boolean hasGameEnded = game.hasGameEnded();
-        assertEquals(true, hasGameEnded);
+        assertTrue(hasGameEnded);
     }
 
     @Test
@@ -54,7 +55,7 @@ public class GameShould {
         game.cells[1][1] = cell;
         game.cells[2][2] = cell;
         boolean hasGameEnded = game.hasGameEnded();
-        assertEquals(true, hasGameEnded);
+        assertTrue(hasGameEnded);
     }
 
     @Test
@@ -80,7 +81,7 @@ public class GameShould {
         game.cells[2][2] = cell9;
 
         boolean isBoardFull = game.isBoardFull();
-        assertEquals(true, isBoardFull);
+        assertTrue(isBoardFull);
     }
 
     @Test

@@ -1,14 +1,15 @@
 package husaynhakeem.io.tictactoe_mvvm.game;
 
 
-import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import husaynhakeem.io.tictactoe_mvvm.model.Cell;
 import husaynhakeem.io.tictactoe_mvvm.model.Game;
 import husaynhakeem.io.tictactoe_mvvm.model.Player;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class GameDiagonalCellsShould {
 
@@ -30,7 +31,7 @@ public class GameDiagonalCellsShould {
         game.cells[1][1] = cell;
         game.cells[2][2] = cell;
         boolean hasThreeSameDiagonalCells = game.hasThreeSameDiagonalCells();
-        Assert.assertEquals(true, hasThreeSameDiagonalCells);
+        assertTrue(hasThreeSameDiagonalCells);
     }
 
     @Test
@@ -40,7 +41,7 @@ public class GameDiagonalCellsShould {
         game.cells[1][1] = cell;
         game.cells[2][0] = cell;
         boolean hasThreeSameDiagonalCells = game.hasThreeSameDiagonalCells();
-        Assert.assertEquals(true, hasThreeSameDiagonalCells);
+        assertTrue(hasThreeSameDiagonalCells);
     }
 
     @Test
@@ -51,6 +52,6 @@ public class GameDiagonalCellsShould {
         game.cells[1][1] = cell;
         game.cells[2][0] = anotherCell;
         boolean hasThreeSameDiagonalCells = game.hasThreeSameDiagonalCells();
-        Assert.assertEquals(false, hasThreeSameDiagonalCells);
+        assertFalse(hasThreeSameDiagonalCells);
     }
 }
