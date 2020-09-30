@@ -1,4 +1,4 @@
-# TicTacToe-MVVM
+# TicTacToeGame-MVVM
 This is a sample Android application based on the Tic-Tac-Toe game which can be played by 2 players, it was developed in order to learn the [MVVM pattern](https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/) (Model-View-View Model) and [Data binding](https://developer.android.com/topic/libraries/data-binding/index.html) in Android. 
 
 ## Libraries used in this project
