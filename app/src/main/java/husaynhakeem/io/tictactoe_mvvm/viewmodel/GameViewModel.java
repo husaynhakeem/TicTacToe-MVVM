@@ -24,7 +24,7 @@ public class GameViewModel extends ViewModel {
     public void onClickedCellAt(int row, int column) {
         if (game.cells[row][column] == null) {
             game.cells[row][column] = new Cell(game.currentPlayer);
-            cells.put(stringFromNumbers(row, column), game.currentPlayer.value);
+            cells.put(stringFromNumbers(row, column), game.currentPlayer.getValue());
             if (game.hasGameEnded())
                 game.reset();
             else

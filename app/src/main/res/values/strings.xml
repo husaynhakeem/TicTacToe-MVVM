@@ -7,4 +7,5 @@
     <string name="game_dialog_empty_name">Name mustn\'t be empty</string>
     <string name="game_dialog_same_names">Names mustn\'t be the same</string>
     <string name="game_end_dialog_headline">The winner is</string>
+    <string name="new_game">New Game</string>
 </resources>

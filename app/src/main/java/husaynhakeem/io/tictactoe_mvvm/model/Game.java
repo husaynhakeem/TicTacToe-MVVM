@@ -97,12 +97,12 @@ public class Game {
             return false;
 
         for (Cell cell : cells)
-            if (cell == null || isNullOrEmpty(cell.player.value))
+            if (cell == null || isNullOrEmpty(cell.getPlayerCell().getValue()))
                 return false;
 
         Cell comparisonBase = cells[0];
         for (int i = 1; i < cells.length; i++)
-            if (!comparisonBase.player.value.equals(cells[i].player.value))
+            if (!comparisonBase.getPlayerCell().getValue().equals(cells[i].getPlayerCell().getValue()))
                 return false;
 
         return true;
